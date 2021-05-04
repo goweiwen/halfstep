@@ -1,0 +1,26 @@
+[package]
+name = "bevy-game"
+version = "0.1.0"
+authors = ["Goh Wei Wen <goweiwen@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "^0.5.0"
+heron = "0.5.1"
+
+anyhow = "1.0.40"
+log = "0.4.14"
+env_logger = "0.8.3"
+
+itertools = "0.10.0"
+rayon = "1.5.0"
+
+# Enable optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+# Maybe also enable only a small amount of optimization for our code:
+[profile.dev]
+opt-level = 1
